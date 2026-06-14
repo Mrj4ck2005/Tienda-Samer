@@ -219,15 +219,7 @@ export default function LoginPage() {
             lineHeight: '1.6',
           }}
         >
-          <p style={{ fontWeight: '600', marginBottom: '8px', color: '#1a1a1a' }}>
-            📧 Credenciales de Prueba:
-          </p>
-          <p>
-            <strong>Email:</strong> admin@samerfloreria.com
-          </p>
-          <p>
-            <strong>Password:</strong> Admin123!
-          </p>
+          <strong>Nota:</strong> Solo el personal logindo puede acceder a este panel. Si tienes problemas para iniciar sesión, contacta al administrador.
         </div>
       </div>
     </div>
