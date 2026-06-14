@@ -6,6 +6,10 @@ import '@/styles/globals.css';
 export const metadata: Metadata = {
   title: 'Samer Florería y Regalos',
   description: 'Arreglos florales únicos para tus momentos especiales',
+  icons: {
+    icon: '/logosamer.png',
+    apple: '/logosamer.png',
+  },
 };
 
 export default function RootLayout({
