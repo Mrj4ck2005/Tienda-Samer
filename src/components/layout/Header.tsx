@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useRouter, usePathname } from 'next/navigation';
 import { useAuth } from '@/hooks/useAuth';
 
@@ -43,13 +44,24 @@ export const Header: React.FC = () => {
           width: 100%;
         }
         .header-logo {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          text-decoration: none;
+          flex-shrink: 1;
+          min-width: 0;
+        }
+        .header-logo-img {
+          height: 32px;
+          width: auto;
+          object-fit: contain;
+          flex-shrink: 0;
+        }
+        .header-logo-text {
           font-family: 'Playfair Display', serif;
           font-size: 17px;
           font-weight: 700;
           color: #1a1a1a;
-          text-decoration: none;
-          flex-shrink: 1;
-          min-width: 0;
           white-space: nowrap;
         }
         .header-nav {
@@ -98,14 +110,16 @@ export const Header: React.FC = () => {
         }
         @media (min-width: 480px) {
           .header-inner { padding: 0 20px; height: 64px; }
-          .header-logo { font-size: 20px; }
+          .header-logo-img { height: 38px; }
+          .header-logo-text { font-size: 20px; }
           .header-nav { gap: 12px; }
           .nav-link, .nav-link-pink { font-size: 13px; }
           .nav-btn, .nav-btn-pink { padding: 8px 14px; font-size: 13px; }
         }
         @media (min-width: 768px) {
           .header-inner { padding: 0 30px; height: 80px; }
-          .header-logo { font-size: 24px; }
+          .header-logo-img { height: 48px; }
+          .header-logo-text { font-size: 24px; }
           .header-nav { gap: 20px; }
           .nav-link, .nav-link-pink { font-size: 15px; }
           .nav-btn, .nav-btn-pink { padding: 10px 20px; font-size: 14px; }
@@ -115,11 +129,21 @@ export const Header: React.FC = () => {
       <header className="header-wrap">
         <div className="header-inner">
 
-          {/* Logo */}
+          {/* Logo: imagen + texto */}
           <Link href="/" className="header-logo">
-            Samer
-            <span style={{ color: '#db2777', margin: '0 4px' }}>&</span>
-            Florería
+            <Image
+              src="/logosamer.png"
+              alt="Samer Florería"
+              width={48}
+              height={48}
+              className="header-logo-img"
+              priority
+            />
+            <span className="header-logo-text">
+              Samer
+              <span style={{ color: '#db2777', margin: '0 4px' }}>&</span>
+              Florería
+            </span>
           </Link>
 
           {/* Nav */}
