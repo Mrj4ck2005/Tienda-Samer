@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Cormorant+Garamond:wght@300;400;500;600&family=Jost:wght@200;300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+:root{
+  --rose:#f43f5e;
+  --rose-soft:#fb7185;
+  --gold:#fbbf24;
+  --bg:#ffffff;
+  --card:#ffffff;
+  --border:rgba(0,0,0,.08);
+  --text:#111827;
+  --text-soft:#6b7280;
+}
+
+body{
+  font-family:'Jost',sans-serif;
+
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(244,63,94,.08),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at bottom left,
+      rgba(251,191,36,.05),
+      transparent 35%
+    ),
+    #ffffff;
+
+  color:#111827;
+
+  overflow-x:hidden;
+  min-height:100vh;
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar{
+  width:8px;
+}
+
+::-webkit-scrollbar-track{
+  background:#f3f4f6;
+}
+
+::-webkit-scrollbar-thumb{
+  background:#d1d5db;
+  border-radius:999px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+  background:#9ca3af;
+}
+
+/* Selección de texto */
+
+::selection{
+  background:#f43f5e;
+  color:white;
+}
+
+@layer utilities {
+
+  .font-playfair{
+    font-family:'Playfair Display',serif;
+  }
+
+  .font-cormorant{
+    font-family:'Cormorant Garamond',serif;
+  }
+
+  /* Glass blanco elegante */
+
+  .glass{
+    background:rgba(255,255,255,.75);
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.8);
+
+    box-shadow:
+      0 8px 32px rgba(0,0,0,.05);
+  }
+
+  /* Tarjetas premium */
+
+  .card-luxury{
+    background:#ffffff;
+
+    border:1px solid rgba(0,0,0,.06);
+
+    border-radius:24px;
+
+    box-shadow:
+      0 10px 30px rgba(0,0,0,.05);
+  }
+
+  .card-luxury-hover{
+    transition:all .3s ease;
+  }
+
+  .card-luxury-hover:hover{
+    transform:translateY(-4px);
+
+    box-shadow:
+      0 18px 40px rgba(0,0,0,.08);
+  }
+
+  /* Gradiente rosa */
+
+  .rose-gradient{
+    background:
+      linear-gradient(
+        135deg,
+        #fb7185,
+        #f43f5e
+      );
+  }
+
+  /* Gradiente dorado */
+
+  .gold-gradient{
+    background:
+      linear-gradient(
+        135deg,
+        #fde68a,
+        #fbbf24
+      );
+  }
+
+  /* Bordes premium */
+
+  .premium-border{
+    border:1px solid rgba(0,0,0,.08);
+  }
+
+  /* Hover elegante */
+
+  .hover-lift{
+    transition:all .3s ease;
+  }
+
+  .hover-lift:hover{
+    transform:translateY(-4px);
+  }
+
+  /* Sombra suave */
+
+  .shadow-soft{
+    box-shadow:
+      0 6px 20px rgba(0,0,0,.06);
+  }
+
+  /* Botón rosa premium */
+
+  .btn-rose{
+    background:#f43f5e;
+    color:white;
+
+    transition:.3s;
+  }
+
+  .btn-rose:hover{
+    background:#e11d48;
+    transform:translateY(-2px);
+  }
+
+  /* Texto elegante */
+
+  .text-muted{
+    color:#6b7280;
+  }
+
+  .text-premium{
+    color:#111827;
+  }
+}
