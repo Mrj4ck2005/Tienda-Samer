@@ -12,6 +12,7 @@ export const Header: React.FC = () => {
   const pathname = usePathname();
 
   const isAdminPanel = pathname?.startsWith('/admin') && pathname !== '/admin/login';
+  const isHome = pathname === '/';
 
   const handleLogout = async () => {
     await logout();
@@ -129,7 +130,7 @@ export const Header: React.FC = () => {
       <header className="header-wrap">
         <div className="header-inner">
 
-          {/* Logo: imagen + texto */}
+          {/* Logo */}
           <Link href="/" className="header-logo">
             <Image
               src="/logosamer.png"
@@ -149,6 +150,7 @@ export const Header: React.FC = () => {
           {/* Nav */}
           <nav className="header-nav">
 
+            {/* ── PANEL ADMIN ── */}
             {isAdminPanel && (
               <>
                 <Link href="/" className="nav-link">Ver Tienda</Link>
@@ -156,9 +158,14 @@ export const Header: React.FC = () => {
               </>
             )}
 
+            {/* ── FUERA DEL PANEL ── */}
             {!isAdminPanel && (
               <>
-                <Link href="/" className="nav-link">INICIO</Link>
+                {/* INICIO solo si NO estamos en home */}
+                {!isHome && (
+                  <Link href="/" className="nav-link">INICIO</Link>
+                )}
+
                 {user ? (
                   <>
                     <Link href="/admin" className="nav-link-pink">PANEL ADMIN</Link>
